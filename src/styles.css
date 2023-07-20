@@ -1,0 +1,147 @@
+/* latin */
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/googlefonts.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  --first-color: #BDBBBB;
+  --second-color: #979797;
+}
+
+body{
+    font-family: 'DM Sans', sans-serif;
+    background-color: #ebeff8;
+}
+
+.row {
+    margin: 0px;
+}
+
+header{
+  height: 28vh;
+}
+
+.main{
+    height: 69vh;
+  }
+
+footer{
+    height: 3vh;
+  }
+
+.rounded-box{
+    border-radius: 40px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.rounded-box-bootom{
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+
+.bg-primary {
+  background-color: var(--first-color) !important;
+}
+
+
+.text-primary{
+  color: var(--first-color) !important;
+}
+
+.text-secondary{
+ color:var(--second-color) !important;
+}
+
+
+ .bg-verde{
+    background:#00890a;
+ }
+
+
+
+.fs-5 {
+    font-size: 2.4vh !important;
+}
+
+.fs-29{
+    font-size: 3.45vh;
+}
+
+.fs-36{
+    font-size: 4.3vh;
+}
+
+.fs-48{
+    font-size: 5.7vh;
+}
+
+
+.shake-horizontal {
+	-webkit-animation: shake-horizontal 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+	        animation: shake-horizontal 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+}
+
+@-webkit-keyframes shake-horizontal {
+    0%,
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    10%,
+    30%,
+    50%,
+    70% {
+      -webkit-transform: translateX(-10px);
+              transform: translateX(-10px);
+    }
+    20%,
+    40%,
+    60% {
+      -webkit-transform: translateX(10px);
+              transform: translateX(10px);
+    }
+    80% {
+      -webkit-transform: translateX(8px);
+              transform: translateX(8px);
+    }
+    90% {
+      -webkit-transform: translateX(-8px);
+              transform: translateX(-8px);
+    }
+  }
+  @keyframes shake-horizontal {
+    0%,
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    10%,
+    30%,
+    50%,
+    70% {
+      -webkit-transform: translateX(-10px);
+              transform: translateX(-10px);
+    }
+    20%,
+    40%,
+    60% {
+      -webkit-transform: translateX(10px);
+              transform: translateX(10px);
+    }
+    80% {
+      -webkit-transform: translateX(8px);
+              transform: translateX(8px);
+    }
+    90% {
+      -webkit-transform: translateX(-8px);
+              transform: translateX(-8px);
+    }
+  }
+  

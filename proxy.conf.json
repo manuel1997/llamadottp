@@ -1,0 +1,10 @@
+{
+    "/api": {
+        "target": "https://apitolweb.totalpack.cl",
+        "secure": true,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/api": ""
+        }
+    }
+}

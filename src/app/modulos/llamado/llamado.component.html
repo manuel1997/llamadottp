@@ -1,0 +1,106 @@
+<app-header></app-header>
+
+<div class="d-flex flex-column align-items-center main">
+    
+    <div  class="col-12 d-flex flex-column align-items-center justify-content-center">
+      <div class="bg-white shadow rounded-box col-10 col-md-6" style="height:auto;">
+        <div class="text-center py-3 px-2">
+          <h5 *ngIf="tipoId == 'P'" class="text-primary fw-semibold mb-0 mt-3 fs-5">PACIENTE</h5>
+          <h1 *ngIf="tipoId == 'P'" class="fs-1 text-secondary fw-semibold">{{rut}}</h1>
+          <h5 *ngIf="tipoId == 'M'" class="text-primary fw-semibold mb-0 mt-3 fs-5">MÉDICO</h5>
+          <h1 *ngIf="tipoId == 'M'" class="fs-1 text-secondary fw-semibold">{{turno.nombremedico}}</h1>
+
+          <div *ngIf="tipoId == 'P'"> 
+            <h1 class="text-secondary fs-29 fw-bolder mb-0">{{turno?.fecha | date:'dd/MM'}}</h1>
+            <h1 class="text-secondary fs-36 fw-bold">{{turno?.fecha | date:'H:mm'}}</h1>
+          </div>
+
+          <div *ngIf="tipoId == 'M'"> 
+            <h1 class="text-secondary fs-29 fw-bolder mb-0">{{turno?.fechaagenda | date:'dd/MM'}}</h1>
+            <h1 class="text-secondary fs-36 fw-bold">{{turno?.fechaagenda | date:'H:mm'}}</h1>
+          </div>
+
+          <div class="bg-verde rounded-3 p-1 mt-4" *ngIf="turno?.estado == 'O'" >
+            <h1 *ngIf="tipoId == 'P'" class="text-white fs-29">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    [attr.fill]="empresa?.color"
+                    width="28px"
+                    viewBox="0 0 448 512">
+                    <path d="M224 0c-17.7 0-32 14.3-32 32V49.9C119.5 61.4 64 124.2 64 200v33.4c0 45.4-15.5 89.5-43.8 124.9L5.3 377c-5.8 7.2-6.9 17.1-2.9 25.4S14.8 416 24 416H424c9.2 0 17.6-5.3 21.6-13.6s2.9-18.2-2.9-25.4l-14.9-18.6C399.5 322.9 384 278.8 384 233.4V200c0-75.8-55.5-138.6-128-150.1V32c0-17.7-14.3-32-32-32zm0 96h8c57.4 0 104 46.6 104 104v33.4c0 47.9 13.9 94.6 39.7 134.6H72.3C98.1 328 112 281.3 112 233.4V200c0-57.4 46.6-104 104-104h8zm64 352H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7s18.7-28.3 18.7-45.3z"/>
+                </svg>
+                LLAMANDO <br> Modulo {{turno.modulo}}
+            </h1>
+            <h1 *ngIf="tipoId == 'M'" class="text-white fs-29">
+              <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#ffff"
+                  width="28px"
+                  viewBox="0 0 448 512">
+                  <path d="M224 0c-17.7 0-32 14.3-32 32V49.9C119.5 61.4 64 124.2 64 200v33.4c0 45.4-15.5 89.5-43.8 124.9L5.3 377c-5.8 7.2-6.9 17.1-2.9 25.4S14.8 416 24 416H424c9.2 0 17.6-5.3 21.6-13.6s2.9-18.2-2.9-25.4l-14.9-18.6C399.5 322.9 384 278.8 384 233.4V200c0-75.8-55.5-138.6-128-150.1V32c0-17.7-14.3-32-32-32zm0 96h8c57.4 0 104 46.6 104 104v33.4c0 47.9 13.9 94.6 39.7 134.6H72.3C98.1 328 112 281.3 112 233.4V200c0-57.4 46.6-104 104-104h8zm64 352H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7s18.7-28.3 18.7-45.3z"/>
+              </svg>
+              LLAMANDO <br> Box {{turno.box}}
+          </h1>
+          </div>
+
+
+          <div class="bg-danger rounded-3 p-1 mt-4" *ngIf="turno?.estado == 'A'" >
+            <h1 class="text-white fs-29">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    [attr.fill]="empresa?.color"
+                    width="28px"
+                    viewBox="0 0 448 512">
+                    <path d="M224 0c-17.7 0-32 14.3-32 32V49.9C119.5 61.4 64 124.2 64 200v33.4c0 45.4-15.5 89.5-43.8 124.9L5.3 377c-5.8 7.2-6.9 17.1-2.9 25.4S14.8 416 24 416H424c9.2 0 17.6-5.3 21.6-13.6s2.9-18.2-2.9-25.4l-14.9-18.6C399.5 322.9 384 278.8 384 233.4V200c0-75.8-55.5-138.6-128-150.1V32c0-17.7-14.3-32-32-32zm0 96h8c57.4 0 104 46.6 104 104v33.4c0 47.9 13.9 94.6 39.7 134.6H72.3C98.1 328 112 281.3 112 233.4V200c0-57.4 46.6-104 104-104h8zm64 352H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7s18.7-28.3 18.7-45.3z"/>
+                </svg>
+                Tu turno ha sido Anulado
+            </h1>
+          </div>
+
+        </div>
+      </div>
+      <div class="bg-primary shadow rounded-box-bootom text-center col-10 col-md-6 p-2">
+        <h1 *ngIf="turno?.estado != 'A' && turno?.estado != 'O'" class="text-white fs-29 fw-semibold">
+          Por favor, espera <br> hasta que te llamen
+        </h1>
+        <h1 *ngIf="turno?.estado == 'O'" class="text-white fw-semibold fs-29">
+            Por favor, acérquese <br> para ser atendido/a
+          </h1>
+          <h1 *ngIf="turno?.estado == 'A'" class="text-white fw-semibold fs-29">
+            Por favor, póngase <br> en contacto con nosotros.
+          </h1>
+      </div>
+    </div>
+
+    <div  *ngIf="turno?.estado != 'A'" class="mt-4 text-center">
+      <svg
+        [ngClass]="{'shake-horizontal': turno?.estado == 'L' || turno?.estado == 'O'}"
+        xmlns="http://www.w3.org/2000/svg"
+        [attr.fill]="empresa?.color"
+        width="38px"
+        viewBox="0 0 448 512">
+        <path d="M224 0c-17.7 0-32 14.3-32 32V49.9C119.5 61.4 64 124.2 64 200v33.4c0 45.4-15.5 89.5-43.8 124.9L5.3 377c-5.8 7.2-6.9 17.1-2.9 25.4S14.8 416 24 416H424c9.2 0 17.6-5.3 21.6-13.6s2.9-18.2-2.9-25.4l-14.9-18.6C399.5 322.9 384 278.8 384 233.4V200c0-75.8-55.5-138.6-128-150.1V32c0-17.7-14.3-32-32-32zm0 96h8c57.4 0 104 46.6 104 104v33.4c0 47.9 13.9 94.6 39.7 134.6H72.3C98.1 328 112 281.3 112 233.4V200c0-57.4 46.6-104 104-104h8zm64 352H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7s18.7-28.3 18.7-45.3z"/>
+      </svg>
+    </div>
+
+    <div *ngIf="turno?.estado == 'I'" class="text-center mt-2 px-1">
+      <h5 class="text-secondary">
+        Mantente atento/a a los números <br> de atención.
+      </h5>
+    </div>
+
+    <div *ngIf="turno?.estado == 'L'" class="text-center mt-2 px-1">
+        <h1 class="text-secondary fs-29">
+          ¡Acércate, ya estás <br> próximo/a a ser llamado/a! 
+        </h1>
+    </div>
+
+</div>
+
+<app-footer></app-footer>
+
+
+
+<ng-container *ngIf="loading">
+    <app-loading></app-loading>
+</ng-container>

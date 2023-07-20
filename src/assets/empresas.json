@@ -1,0 +1,17 @@
+{
+    "demo":{
+        "idEmpresa":1,
+        "idOficina":1,
+        "color":"#BDBBBB",
+        "slug":"demo",
+        "logo":"https://emisortotem.totalpack.cl/images/logo_ttp_demo.png"
+    },
+
+    "santamaria":{
+        "idEmpresa":200,
+        "idOficina":100,
+        "color":"#3557a0",
+        "slug":"santamaria",
+        "logo":"/assets/imgs/logo.png"
+    }
+}
